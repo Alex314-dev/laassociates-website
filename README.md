@@ -70,6 +70,20 @@ Your domain’s **MX records** (Google Workspace email) are separate from the we
   and a `CNAME` for `www` → `<username>.github.io`.
 - Leave all existing `MX` and Google verification `TXT` records untouched.
 
+## Business-card QR code
+A branded QR code that opens `https://laassociatesbg.com/` lives in `assets/img/`:
+
+- `qr-laassociatesbg.svg` — vector, scales to any size (use this at the print shop).
+- `qr-laassociatesbg.png` — ~1148 px raster for quick previews / digital use.
+
+Brand maroon modules with the logo mark centred, generated at high error correction so the
+logo overlay stays scannable. To regenerate (e.g. after a URL or brand-colour change):
+
+```bash
+pip install segno Pillow
+python3 tools/generate-qr.py
+```
+
 ## After deploying — SEO finishing touches
 - Submit `https://laassociatesbg.com/sitemap.xml` in
   [Google Search Console](https://search.google.com/search-console).
