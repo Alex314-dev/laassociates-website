@@ -76,6 +76,7 @@ p  { margin: 0 0 1rem; }
   backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid var(--line);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 68px; }
+.nav__logo { flex: 0 1 auto; min-width: 0; }
 .nav__logo img { height: 30px; width: auto; }
 .nav__links { display: flex; align-items: center; gap: clamp(1rem, 2.4vw, 2rem); list-style: none; margin: 0; padding: 0; }
 .nav__links a { color: var(--ink); font-weight: 600; font-size: .95rem; }
@@ -98,6 +99,13 @@ p  { margin: 0 0 1rem; }
 
 @media (max-width: 860px) {
   .nav__toggle { display: inline-flex; }
+  /* Wordmark is very wide (≈10:1); at fixed 30px height it can't fit beside the
+     language switcher + menu button on a phone, so it was being width-clamped and
+     squished. Let it scale down proportionally instead, and tighten the controls
+     so it stays as large as possible. */
+  .nav__logo img { height: auto; width: auto; max-width: 100%; }
+  .nav__right { gap: .7rem; }
+  .lang { font-size: .8rem; }
   .nav__links {
     position: fixed; inset: 68px 0 auto 0; flex-direction: column; align-items: flex-start;
     gap: 0; background: #fff; border-bottom: 1px solid var(--line); padding: .5rem 0;
@@ -146,7 +154,12 @@ p  { margin: 0 0 1rem; }
 .product ul { margin: 1rem 0 0; padding: 0; list-style: none; display: grid; gap: .5rem; }
 .product li { display: flex; gap: .6rem; align-items: flex-start; color: var(--ink-soft); font-size: .97rem; }
 .product li::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: .55rem; border-radius: 50%; background: var(--brand); }
-@media (max-width: 680px) { .product { grid-template-columns: 1fr; } .product__visual { max-width: 220px; margin-inline: auto; } }
+@media (max-width: 680px) {
+  .product { grid-template-columns: 1fr; }
+  /* Drop the 4/5 box (which height-constrained the can) and let the panel hug a
+     larger, width-driven can on mobile. */
+  .product__visual { max-width: 280px; margin-inline: auto; aspect-ratio: auto; padding: clamp(18px, 5vw, 28px); }
+}
 
 /* sourcing split */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem,5vw,4rem); align-items: center; }
@@ -163,13 +176,14 @@ p  { margin: 0 0 1rem; }
 .contact__list li { display: flex; gap: .9rem; align-items: flex-start; }
 .contact__ico { flex: none; width: 40px; height: 40px; border-radius: 10px; background: var(--brand-tint); color: var(--brand); display: grid; place-items: center; }
 .contact__ico svg { width: 20px; height: 20px; }
+.contact__list li > span:last-child { min-width: 0; }
 .contact__list .k { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); font-weight: 700; }
-.contact__list .v { font-weight: 600; color: var(--ink); }
+.contact__list .v { font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
 .contact__list a.v:hover { color: var(--brand); }
 .contact__card { background: var(--bg-alt); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(1.5rem, 4vw, 2.4rem); }
 .contact__card dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: .5rem 1rem; }
-.contact__card dt { font-weight: 700; color: var(--ink-soft); }
-.contact__card dd { margin: 0; }
+.contact__card dt { font-weight: 700; color: var(--ink-soft); white-space: nowrap; }
+.contact__card dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
 
 /* ---------- footer ---------- */
 .site-footer { background: #1a1416; color: #cfc7c7; padding: clamp(40px, 6vw, 64px) 0 28px; }
@@ -178,8 +192,10 @@ p  { margin: 0 0 1rem; }
 .footer__brand img { height: 30px; filter: brightness(0) invert(1); margin-bottom: 1rem; }
 .footer__brand p { max-width: 38ch; color: #b3abab; font-size: .95rem; }
 .footer__nav { display: flex; gap: 3rem; flex-wrap: wrap; }
+.footer__nav > div { min-width: 0; }
 .footer__nav h4 { font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; color: #8f8888; margin: 0 0 .8rem; }
 .footer__nav ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.footer__nav li { overflow-wrap: anywhere; }
 .footer__nav a { color: #cfc7c7; font-size: .95rem; }
 .footer__nav a:hover { color: #fff; }
 .footer__bottom { margin-top: 2.5rem; padding-top: 1.4rem; border-top: 1px solid rgba(255,255,255,.12);
