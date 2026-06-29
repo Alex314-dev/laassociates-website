@@ -1,0 +1,13 @@
+{
+  "name": "LA Associates",
+  "short_name": "LA Associates",
+  "description": "Importer and distributor of Guaraná Antarctica in Bulgaria.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8C181B",
+  "icons": [
+    { "src": "/assets/img/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/assets/img/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
