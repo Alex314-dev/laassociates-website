@@ -84,6 +84,15 @@ pip install segno Pillow
 python3 tools/generate-qr.py
 ```
 
+The script also works for any other brand — pass a URL and a logo image, and the module
+colour is inferred from the logo automatically (override with `--color`). Outputs are
+auto-named `qr-<domain>.svg` / `.png` in `assets/img/`:
+
+```bash
+python3 tools/generate-qr.py https://example.com path/to/logo.png
+python3 tools/generate-qr.py https://example.com path/to/logo.png --color "#123456"
+```
+
 ## After deploying — SEO finishing touches
 - Submit `https://laassociatesbg.com/sitemap.xml` in
   [Google Search Console](https://search.google.com/search-console).
