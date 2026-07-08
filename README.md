@@ -93,6 +93,14 @@ python3 tools/generate-qr.py https://example.com path/to/logo.png
 python3 tools/generate-qr.py https://example.com path/to/logo.png --color "#123456"
 ```
 
+By default the logo sits on a white rounded chip. Pass `--no-frame` to drop it so
+the modules run all the way up to the logo (best when the logo already has its own
+light background/outline):
+
+```bash
+python3 tools/generate-qr.py https://example.com path/to/logo.png --no-frame
+```
+
 ## After deploying — SEO finishing touches
 - Submit `https://laassociatesbg.com/sitemap.xml` in
   [Google Search Console](https://search.google.com/search-console).

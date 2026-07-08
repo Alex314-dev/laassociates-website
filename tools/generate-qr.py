@@ -118,8 +118,13 @@ def infer_brand_color(logo: Image.Image) -> str:
 
 
 def make_png(qr: segno.QRCode, logo: Image.Image, brand: str,
-             out_png: Path) -> None:
-    """Render the QR as a high-res PNG with a centred logo on a white chip."""
+             out_png: Path, frame: bool = True) -> None:
+    """Render the QR as a high-res PNG with a centred logo.
+
+    With ``frame`` (default) the logo sits on a white rounded chip so it reads
+    cleanly over the modules; without it the modules run right up to the logo,
+    which is then composited directly on top.
+    """
     buf = io.BytesIO()
     qr.save(buf, kind="png", scale=PNG_SCALE, border=QUIET_ZONE,
             dark=brand, light=WHITE)
@@ -132,22 +137,29 @@ def make_png(qr: segno.QRCode, logo: Image.Image, brand: str,
     logo = logo.resize((round(logo.width * ratio), round(logo.height * ratio)),
                        Image.LANCZOS)
 
-    # White rounded chip behind the logo so it reads cleanly over the modules.
-    pad = round(target * 0.16)
-    chip_w, chip_h = logo.width + 2 * pad, logo.height + 2 * pad
-    chip = Image.new("RGBA", (chip_w, chip_h), (0, 0, 0, 0))
-    radius = round(min(chip_w, chip_h) * 0.18)
-    ImageDraw.Draw(chip).rounded_rectangle(
-        [0, 0, chip_w - 1, chip_h - 1], radius=radius, fill=WHITE)
-    chip.alpha_composite(logo, (pad, pad))
-
-    base.alpha_composite(chip, ((w - chip_w) // 2, (h - chip_h) // 2))
+    if frame:
+        # White rounded chip behind the logo so it reads cleanly over modules.
+        pad = round(target * 0.16)
+        chip_w, chip_h = logo.width + 2 * pad, logo.height + 2 * pad
+        chip = Image.new("RGBA", (chip_w, chip_h), (0, 0, 0, 0))
+        radius = round(min(chip_w, chip_h) * 0.18)
+        ImageDraw.Draw(chip).rounded_rectangle(
+            [0, 0, chip_w - 1, chip_h - 1], radius=radius, fill=WHITE)
+        chip.alpha_composite(logo, (pad, pad))
+        base.alpha_composite(chip, ((w - chip_w) // 2, (h - chip_h) // 2))
+    else:
+        base.alpha_composite(logo, ((w - logo.width) // 2,
+                                    (h - logo.height) // 2))
     base.save(out_png)
 
 
 def make_svg(qr: segno.QRCode, logo: Image.Image, brand: str,
-             out_svg: Path) -> None:
-    """Render the QR as SVG, injecting a centred white chip + embedded logo."""
+             out_svg: Path, frame: bool = True) -> None:
+    """Render the QR as SVG, injecting a centred (optionally framed) logo.
+
+    With ``frame`` (default) a white rounded chip is drawn behind the embedded
+    logo; without it only the logo is overlaid and the modules run up to it.
+    """
     buf = io.BytesIO()
     qr.save(buf, kind="svg", scale=10, border=QUIET_ZONE,
             dark=brand, light=WHITE)
@@ -159,19 +171,24 @@ def make_svg(qr: segno.QRCode, logo: Image.Image, brand: str,
 
     logo_w = vb_w * LOGO_RATIO
     logo_h = logo_w * logo.height / logo.width
-    pad = logo_w * 0.16
-    chip_w, chip_h = logo_w + 2 * pad, logo_h + 2 * pad
-    chip_x, chip_y = (vb_w - chip_w) / 2, (vb_h - chip_h) / 2
     logo_x, logo_y = (vb_w - logo_w) / 2, (vb_h - logo_h) / 2
-    radius = min(chip_w, chip_h) * 0.18
 
     out = io.BytesIO()
     logo.save(out, format="PNG")
     b64 = base64.b64encode(out.getvalue()).decode("ascii")
 
-    overlay = (
-        f'<rect x="{chip_x:.3f}" y="{chip_y:.3f}" width="{chip_w:.3f}" '
-        f'height="{chip_h:.3f}" rx="{radius:.3f}" ry="{radius:.3f}" fill="{WHITE}"/>'
+    overlay = ""
+    if frame:
+        pad = logo_w * 0.16
+        chip_w, chip_h = logo_w + 2 * pad, logo_h + 2 * pad
+        chip_x, chip_y = (vb_w - chip_w) / 2, (vb_h - chip_h) / 2
+        radius = min(chip_w, chip_h) * 0.18
+        overlay += (
+            f'<rect x="{chip_x:.3f}" y="{chip_y:.3f}" width="{chip_w:.3f}" '
+            f'height="{chip_h:.3f}" rx="{radius:.3f}" ry="{radius:.3f}" '
+            f'fill="{WHITE}"/>'
+        )
+    overlay += (
         f'<image x="{logo_x:.3f}" y="{logo_y:.3f}" width="{logo_w:.3f}" '
         f'height="{logo_h:.3f}" href="data:image/png;base64,{b64}"/>'
     )
@@ -191,6 +208,9 @@ def parse_args() -> argparse.Namespace:
                         "logo when omitted")
     p.add_argument("--out-dir", default=str(DEFAULT_OUT_DIR),
                    help="output directory (default: assets/img)")
+    p.add_argument("--no-frame", action="store_true",
+                   help="drop the white chip behind the logo; modules run all "
+                        "the way up to the logo")
     return p.parse_args()
 
 
@@ -221,12 +241,14 @@ def main() -> None:
     out_svg = out_dir / f"qr-{slug}.svg"
     out_png = out_dir / f"qr-{slug}.png"
 
+    frame = not args.no_frame
     qr = segno.make(args.url, error="h")
-    make_png(qr, logo, brand, out_png)
-    make_svg(qr, logo, brand, out_svg)
+    make_png(qr, logo, brand, out_png, frame=frame)
+    make_svg(qr, logo, brand, out_svg, frame=frame)
 
     print(f"Encoded: {args.url}")
-    print(f"  version={qr.version}  error={qr.error}  colour={brand}")
+    print(f"  version={qr.version}  error={qr.error}  colour={brand}  "
+          f"frame={'on' if frame else 'off'}")
     print(f"  logo={logo_src}")
     try:
         print(f"  wrote {out_svg.relative_to(ROOT)}")
