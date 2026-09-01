@@ -9,11 +9,17 @@ No framework, no build step, no dependencies — just HTML, one CSS file and a t
 
 ```
 .
-├── index.html              # English (default)        → https://laassociatesbg.com/
-├── bg/index.html           # Bulgarian                → https://laassociatesbg.com/bg/
+├── index.html              # Bulgarian (default)      → https://laassociatesbg.com/
+├── en/index.html           # English                  → https://laassociatesbg.com/en/
+├── guarana/                # BG "Какво е гуарана"     → /guarana/
+├── en/guarana/             # EN "What is guaraná"     → /en/guarana/
+├── guarana-antarctica/     # BG product page + FAQ    → /guarana-antarctica/
+├── en/guarana-antarctica/  # EN product page + FAQ    → /en/guarana-antarctica/
+├── bg/index.html           # redirect stub → / (the old Bulgarian URL)
+├── 404.html                # branded not-found page
 ├── assets/
 │   ├── css/styles.css       # all styling (brand colours live in :root)
-│   ├── js/main.js           # mobile menu + footer year
+│   ├── js/main.js           # nav menu + footer year
 │   └── img/                 # logos, favicons, OG image
 ├── favicon.ico
 ├── site.webmanifest
@@ -31,12 +37,18 @@ server rather than double-clicking the file:
 ```bash
 cd "this folder"
 python3 -m http.server 8000
-# then open http://localhost:8000/  (Bulgarian at /bg/)
+# then open http://localhost:8000/  (Bulgarian at /, English at /en/)
 ```
 
 ## Editing content
 
-- English lives in `index.html`, Bulgarian in `bg/index.html` — **edit both together**.
+- Bulgarian lives in `index.html`, English in `en/index.html` — **edit both together**.
+- The same applies to each content page: `guarana/` ↔ `en/guarana/` and
+  `guarana-antarctica/` ↔ `en/guarana-antarctica/`.
+- Bulgarian is the default language: `/` serves Bulgarian and `hreflang="x-default"`
+  points at it, because the site targets the Bulgarian market.
+- There is no build step, so the header and footer are duplicated across the eight
+  HTML files. Change one, change them all.
 - Brand colour and theme: change `--brand` in `assets/css/styles.css` (`:root`).
 - Outstanding content (VAT number, socials, company story, product formats) is listed in
   `CONTENT.md`; every spot is marked with a `TODO` comment.
@@ -103,6 +115,11 @@ python3 tools/generate-qr.py https://example.com path/to/logo.png --no-frame
 
 ## After deploying — SEO finishing touches
 - Submit `https://laassociatesbg.com/sitemap.xml` in
-  [Google Search Console](https://search.google.com/search-console).
+  [Google Search Console](https://search.google.com/search-console) (verify by DNS TXT).
 - Validate the structured data with the
   [Rich Results Test](https://search.google.com/test/rich-results).
+- Re-request indexing for `/` and `/en/`, and confirm the old `/bg/` URL drops out
+  of the index over the following weeks.
+- Create a **Google Business Profile** under the company Google Workspace account.
+  Location-aware ranking is driven by that profile, not by anything in this repo —
+  it is the single biggest remaining lever.
