@@ -1,16 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://laassociatesbg.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://laassociatesbg.com/"/>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://laassociatesbg.com/bg/"/>
+    <lastmod>2026-09-01</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://laassociatesbg.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://laassociatesbg.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://laassociatesbg.com/"/>
+    <image:image>
+      <image:loc>https://laassociatesbg.com/assets/img/guarana-can.png</image:loc>
+      <image:title>Гуарана Антарктика</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://laassociatesbg.com/bg/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://laassociatesbg.com/"/>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://laassociatesbg.com/bg/"/>
+    <loc>https://laassociatesbg.com/en/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://laassociatesbg.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://laassociatesbg.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://laassociatesbg.com/"/>
+    <image:image>
+      <image:loc>https://laassociatesbg.com/assets/img/guarana-can.png</image:loc>
+      <image:title>Guaraná Antarctica</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://laassociatesbg.com/guarana/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://laassociatesbg.com/guarana/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://laassociatesbg.com/en/guarana/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://laassociatesbg.com/guarana/"/>
+  </url>
+  <url>
+    <loc>https://laassociatesbg.com/en/guarana/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://laassociatesbg.com/guarana/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://laassociatesbg.com/en/guarana/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://laassociatesbg.com/guarana/"/>
+  </url>
+  <url>
+    <loc>https://laassociatesbg.com/guarana-antarctica/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://laassociatesbg.com/guarana-antarctica/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://laassociatesbg.com/en/guarana-antarctica/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://laassociatesbg.com/guarana-antarctica/"/>
+    <image:image>
+      <image:loc>https://laassociatesbg.com/assets/img/guarana-can.png</image:loc>
+      <image:title>Гуарана Антарктика</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://laassociatesbg.com/en/guarana-antarctica/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://laassociatesbg.com/guarana-antarctica/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://laassociatesbg.com/en/guarana-antarctica/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://laassociatesbg.com/guarana-antarctica/"/>
+    <image:image>
+      <image:loc>https://laassociatesbg.com/assets/img/guarana-can.png</image:loc>
+      <image:title>Guaraná Antarctica</image:title>
+    </image:image>
   </url>
 </urlset>

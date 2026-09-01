@@ -1,7 +1,8 @@
 {
-  "name": "LA Associates",
+  "name": "LA Associates — Гуарана Антарктика",
   "short_name": "LA Associates",
-  "description": "Importer and distributor of Guaraná Antarctica in Bulgaria.",
+  "description": "Вносител и дистрибутор на Гуарана Антарктика в България.",
+  "lang": "bg",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

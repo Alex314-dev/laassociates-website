@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Unrelated client asset kept in this repository
+Disallow: /assets/img/qr-buzko.png
+Disallow: /assets/img/qr-buzko.svg
+
 Sitemap: https://laassociatesbg.com/sitemap.xml
