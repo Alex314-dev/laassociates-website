@@ -78,7 +78,7 @@ p  { margin: 0 0 1rem; }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 68px; }
 .nav__logo { flex: 0 1 auto; min-width: 0; }
 .nav__logo img { height: 30px; width: auto; }
-.nav__links { display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(.85rem, 1.8vw, 1.4rem); list-style: none; margin: 0; padding: 0; }
+.nav__links { display: flex; align-items: center; gap: clamp(1rem, 2.4vw, 2rem); list-style: none; margin: 0; padding: 0; }
 .nav__links a { color: var(--ink); font-weight: 600; font-size: .95rem; }
 .nav__links a:hover { color: var(--brand); text-decoration: none; }
 .nav__right { display: flex; align-items: center; gap: 1.2rem; }
@@ -90,15 +90,27 @@ p  { margin: 0 0 1rem; }
 .lang [aria-current="true"] { color: #fff; background: var(--brand); }
 .lang span.sep { color: var(--line); }
 
-/* mobile nav */
+/* nav menu — always collapsed behind the toggle, at every screen size */
 .nav__toggle {
-  display: none; background: none; border: 0; cursor: pointer; padding: .4rem;
+  display: inline-flex; background: none; border: 0; cursor: pointer; padding: .4rem;
   color: var(--ink);
 }
 .nav__toggle svg { width: 26px; height: 26px; }
 
-@media (max-width: 1100px) {
-  .nav__toggle { display: inline-flex; }
+/* The menu panel drops from under the sticky header (68px nav + 1px border). */
+.nav__links {
+  position: fixed; inset: 69px 0 auto 0; flex-direction: column; align-items: flex-start;
+  gap: 0; background: #fff; border-bottom: 1px solid var(--line); padding: .5rem 0;
+  box-shadow: var(--shadow); transform: translateY(-12px); opacity: 0; pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+}
+.nav__links.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+/* Panel spans the viewport, but its items line up with the container — and so
+   with the logo — instead of hugging the screen edge on wide displays. */
+.nav__links li { width: 100%; max-width: var(--maxw); margin-inline: auto; }
+.nav__links a { display: block; padding: .85rem clamp(20px,5vw,40px); width: 100%; }
+
+@media (max-width: 860px) {
   /* Wordmark is very wide (≈10:1); at fixed 30px height it can't fit beside the
      language switcher + menu button on a phone, so it was being width-clamped and
      squished. Let it scale down proportionally instead, and tighten the controls
@@ -106,15 +118,6 @@ p  { margin: 0 0 1rem; }
   .nav__logo img { height: auto; width: auto; max-width: 100%; }
   .nav__right { gap: .7rem; }
   .lang { font-size: .8rem; }
-  .nav__links {
-    position: fixed; inset: 68px 0 auto 0; flex-direction: column; align-items: flex-start;
-    gap: 0; background: #fff; border-bottom: 1px solid var(--line); padding: .5rem 0;
-    box-shadow: var(--shadow); transform: translateY(-12px); opacity: 0; pointer-events: none;
-    transition: opacity .18s ease, transform .18s ease;
-  }
-  .nav__links.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
-  .nav__links li { width: 100%; }
-  .nav__links a { display: block; padding: .85rem clamp(20px,5vw,40px); width: 100%; }
 }
 
 /* ---------- hero ---------- */
