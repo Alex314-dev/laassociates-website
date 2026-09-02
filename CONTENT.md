@@ -3,6 +3,23 @@
 This page is intentionally built so the deferred items can be dropped in without a redesign.
 Search the codebase for `TODO` to find every spot that needs an edit.
 
+## Registered company details (from the Commercial Register)
+Used for the Organization schema and the visible company block. Source: the
+Bulgarian open-data register via papagal.bg, checked 2026-09-02.
+
+| Field | Value |
+|-------|-------|
+| Legal name (BG) | ЕЛ ЕЙ АСОШИЕЙТС ООД |
+| Latin transliteration | LA ASSOCIATES Ltd. |
+| ЕИК / UIC | 208879004 |
+| VAT | BG208879004 (from 14.07.2026) |
+| Registered | 07.07.2026 |
+| Seat | гр. София (1404), р-н Триадица, жк. Гоце Делчев, Деян Белишки 113А |
+
+These matter for more than compliance: stating them on the site is what lets
+Google connect laassociatesbg.com to the registered company, instead of leaving
+directory sites as the best-corroborated result for a "LA Associates" search.
+
 ## ✅ Already in the site
 - Logos (wordmark + icon mark) and favicons
 - Brand colour `#8C181B`
@@ -24,7 +41,7 @@ Search the codebase for `TODO` to find every spot that needs an edit.
 ## ⏳ To add when available
 | Item | Where to edit | Notes |
 |------|---------------|-------|
-| **VAT / ЕИК number** | `index.html` & `en/index.html` — footer `<!-- TODO ... VAT -->` and the Company-details `<dl>` | Add a `<dt>VAT</dt><dd>…</dd>` line and append to the footer copyright. |
+| ~~**VAT / ЕИК number**~~ | ✅ done — ЕИК 208879004, ДДС BG208879004 | Shown in Company details and the footer on both home pages, and as `vatID` / `taxID` / `identifier` in the Organization schema. |
 | **Social media links** | both pages — `<!-- Social links go here -->` in footer, and `"sameAs"` in the JSON-LD `<script>` | Add icon links + list the profile URLs in `sameAs`. |
 | **Company story** | both pages — insert a new `<section>` after the Hero | A short "Our Story" block; structure mirrors other sections. |
 | ~~**Exact product formats**~~ | ✅ done — 330 ml can, 24 units per case | Listed on both home pages, both product pages, and as `size` in the Product schema. |
