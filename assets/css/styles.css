@@ -130,10 +130,11 @@ p  { margin: 0 0 1rem; }
 
 /* ---------- cards / grids ---------- */
 .grid { display: grid; gap: 1.2rem; }
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
 .grid--3 { grid-template-columns: repeat(3, 1fr); }
 .grid--4 { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 900px) { .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .grid--3, .grid--4 { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; } }
 
 .card {
   background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
@@ -203,6 +204,74 @@ p  { margin: 0 0 1rem; }
 .footer__nav a:hover { color: #fff; }
 .footer__bottom { margin-top: 2.5rem; padding-top: 1.4rem; border-top: 1px solid rgba(255,255,255,.12);
   display: flex; flex-wrap: wrap; gap: .6rem 1.5rem; justify-content: space-between; font-size: .85rem; color: #8f8888; }
+
+/* ---------- where to buy ---------- */
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.wtb__tools { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.2rem; margin: 1.6rem 0 .4rem; }
+.wtb__tools[hidden] { display: none; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip {
+  font: inherit; font-size: .9rem; font-weight: 600; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 999px; padding: .45rem 1rem; cursor: pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.chip:hover { border-color: var(--brand); color: var(--brand); }
+.chip[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
+.wtb__city select {
+  font: inherit; font-size: .9rem; font-weight: 600; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 999px; padding: .45rem 1rem; cursor: pointer; max-width: 100%;
+}
+.wtb__near { padding: .45rem 1.1rem; font-size: .9rem; margin-left: auto; }
+.wtb__status { min-height: 1.6em; margin: .4rem 0 .8rem; font-size: .92rem; color: var(--ink-soft); }
+.wtb__status:empty { min-height: 0; margin: 0; }
+
+/* Fixed height so the page doesn't jump when the map loads. */
+.wtb__map {
+  height: clamp(320px, 55vh, 520px); margin: 1.2rem 0 2.4rem; border: 1px solid var(--line);
+  border-radius: var(--radius-lg); overflow: hidden; background: var(--bg-alt); z-index: 0;
+  scroll-margin-top: 90px; display: grid; place-items: center;
+}
+.wtb__map.leaflet-container { display: block; font: inherit; }
+.wtb__map-fallback { color: var(--ink-soft); padding: 1rem; text-align: center; margin: 0; }
+.map-pin { color: var(--brand); filter: drop-shadow(0 3px 4px rgba(20,10,10,.3)); }
+.map-pin svg { width: 30px; height: 40px; fill: currentColor; display: block; }
+.map-popup { display: grid; gap: .2rem; font-size: .92rem; line-height: 1.4; }
+.map-popup strong { font-size: 1rem; }
+.map-popup__links { display: flex; gap: 1rem; margin-top: .3rem; font-weight: 700; }
+.wtb .leaflet-popup-content-wrapper { border-radius: var(--radius); }
+
+.stores__group + .stores__group { margin-top: 2.4rem; }
+.stores__group[hidden] { display: none; }
+.stores__city { display: flex; align-items: center; gap: .6rem; }
+.stores__count {
+  font-size: .78rem; font-weight: 700; color: var(--brand); background: var(--brand-tint);
+  border-radius: 999px; padding: .15rem .6rem; letter-spacing: 0;
+}
+.stores__list { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.stores__list li[hidden] { display: none; }
+.stores__empty { font-size: 1.05rem; color: var(--ink-soft); max-width: 60ch; margin-top: 1.4rem; }
+.store { height: 100%; display: flex; flex-direction: column; scroll-margin-top: 90px; }
+.store:target { border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-tint), var(--shadow); }
+.store__type {
+  align-self: flex-start; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--brand); background: var(--brand-tint); padding: .25rem .65rem; border-radius: 999px; margin-bottom: .8rem;
+}
+.store__dist { font-size: .85rem; font-weight: 700; color: var(--ink); margin: -.4rem 0 .6rem; }
+.store__name { font-size: 1.15rem; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 .3rem; }
+.card .store__addr { color: var(--ink); font-weight: 600; font-size: .93rem; margin-bottom: .6rem; }
+.card .store__desc { flex: 1; }
+.card .store__links { display: flex; flex-wrap: wrap; gap: .4rem 1rem; align-items: center; margin: 1rem 0 0; font-size: .92rem; font-weight: 700; }
+.store__show {
+  font: inherit; font-weight: 700; color: var(--brand); background: none; border: 0; padding: 0; cursor: pointer;
+}
+.store__show:hover { text-decoration: underline; }
+.wtb__updated { margin: 2.4rem 0 0; font-size: .88rem; color: var(--ink-soft); }
+.wtb__panel-btn { background: #fff; color: var(--brand); border-color: #fff; }
+.wtb__panel-btn:hover { background: var(--brand-tint); border-color: var(--brand-tint); text-decoration: none; }
+@media (max-width: 560px) {
+  .wtb__near { margin-left: 0; }
+}
 
 /* reduced motion */
 @media (prefers-reduced-motion: reduce) {

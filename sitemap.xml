@@ -66,4 +66,20 @@
       <image:title>Guaraná Antarctica</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://laassociatesbg.com/where-to-buy/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://laassociatesbg.com/where-to-buy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://laassociatesbg.com/en/where-to-buy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://laassociatesbg.com/where-to-buy/"/>
+  </url>
+  <url>
+    <loc>https://laassociatesbg.com/en/where-to-buy/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://laassociatesbg.com/where-to-buy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://laassociatesbg.com/en/where-to-buy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://laassociatesbg.com/where-to-buy/"/>
+  </url>
 </urlset>

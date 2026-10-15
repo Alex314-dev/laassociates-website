@@ -1,0 +1,48 @@
+[
+  {
+    "id": "the-neighbours-sofia",
+    "name": "The Neighbours (Sasedite)",
+    "type": "restaurant",
+    "city": { "bg": "София", "en": "Sofia" },
+    "address": { "bg": "„Мотописта“, бул. Гоце Делчев 102, вход А", "en": "Motopista, 102 Gotse Delchev Blvd, entrance A" },
+    "lat": 42.6654378, "lng": 23.3020653,
+    "description": {
+      "bg": "Семеен ресторант в „Мотописта“, в края на Южния парк.",
+      "en": "A family restaurant at Motopista, on the edge of South Park."
+    },
+    "maps_url": "https://maps.google.com/?cid=1391161836271039142",
+    "added": "2026-10-15",
+    "active": true
+  },
+  {
+    "id": "arnold-fit-food-spartak-sofia",
+    "name": "Arnold Fit Food – Спартак",
+    "type": "restaurant",
+    "city": { "bg": "София", "en": "Sofia" },
+    "address": { "bg": "бул. Арсеналски 81, кв. Лозенец", "en": "81 Arsenalski Blvd, Lozenets" },
+    "lat": 42.6743758, "lng": 23.3132987,
+    "description": {
+      "bg": "Ресторант за здравословна храна с ястия, богати на протеин, до басейн „Спартак“ в Лозенец.",
+      "en": "A health-food restaurant with protein-rich dishes, next to the Spartak pool in Lozenets."
+    },
+    "website": "https://arnold-food.com/",
+    "maps_url": "https://maps.google.com/?cid=16748409862052241645",
+    "added": "2026-10-15",
+    "active": true
+  },
+  {
+    "id": "robin-lab-sofia",
+    "name": "Robin Lab",
+    "type": "bakery",
+    "city": { "bg": "София", "en": "Sofia" },
+    "address": { "bg": "ул. „Иван Денкоглу“ 34", "en": "34 Ivan Denkoglu St" },
+    "lat": 42.6936559, "lng": 23.3209454,
+    "description": {
+      "bg": "Пекарна в центъра на София, на няколко минути пеша от площад „Славейков“.",
+      "en": "A bakery in central Sofia, a few minutes' walk from Slaveykov Square."
+    },
+    "maps_url": "https://maps.google.com/?cid=1634926435880301953",
+    "added": "2026-10-15",
+    "active": true
+  }
+]

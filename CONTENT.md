@@ -46,6 +46,7 @@ directory sites as the best-corroborated result for a "LA Associates" search.
 | **Company story** | both pages — insert a new `<section>` after the Hero | A short "Our Story" block; structure mirrors other sections. |
 | ~~**Exact product formats**~~ | ✅ done — 330 ml can, 24 units per case | Listed on both home pages and both product pages. |
 | **Product structured data** | `index.html`, `en/index.html`, both `guarana-antarctica/` pages — JSON-LD | Removed 2026-09-12: Google treats a `Product` without `offers`, `review` or `aggregateRating` as invalid. The drink is described as a `Brand` for now. Re-add `Product` with a real `Offer` (public price in BGN, availability) when the webshop launches — never with a placeholder price or invented reviews. |
+| **Where to buy — first places** | `data/stores.json`, then `python3 tools/build-stores.py` | The page is live but empty until the first stockists are added (it shows a "coming soon" note). See README → "Where to buy". |
 | **Product photo** | `assets/img/` + Portfolio `.product__visual img` | Replace the placeholder logo image with a real bottle/can photo. |
 
 ## Notes
