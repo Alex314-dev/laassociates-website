@@ -202,5 +202,50 @@
     "maps_url": "https://maps.google.com/?cid=4678051443280931212",
     "added": "2026-10-21",
     "active": true
+  },
+  {
+    "id": "snob-shop-sofia",
+    "name": "Snob Shop",
+    "type": "shop",
+    "city": {
+      "bg": "София",
+      "en": "Sofia"
+    },
+    "address": {
+      "bg": "ул. „Юрий Венелин“ 28, център",
+      "en": "28 Yuri Venelin St, city centre"
+    },
+    "lat": 42.6889253,
+    "lng": 23.3311178,
+    "description": {
+      "bg": "Квартален магазин в центъра на София, на ул. „Юрий Венелин“.",
+      "en": "A neighbourhood shop in central Sofia, on Yuri Venelin St."
+    },
+    "maps_url": "https://maps.google.com/?cid=2476410185112421475",
+    "added": "2026-11-02",
+    "active": true
+  },
+  {
+    "id": "mosyu-marten-sofia",
+    "name": "Мосю Мартен",
+    "type": "restaurant",
+    "city": {
+      "bg": "София",
+      "en": "Sofia"
+    },
+    "address": {
+      "bg": "ул. „Добри Войников“ 53, кв. Лозенец",
+      "en": "53 Dobri Voynikov St, Lozenets"
+    },
+    "lat": 42.6818229,
+    "lng": 23.3288611,
+    "description": {
+      "bg": "Сандвичарница в Лозенец, на ул. „Добри Войников“.",
+      "en": "A sandwich shop in Lozenets, on Dobri Voynikov St."
+    },
+    "website": "https://www.facebook.com/mosiumarten/",
+    "maps_url": "https://maps.google.com/?cid=3377292344015401340",
+    "added": "2026-11-02",
+    "active": true
   }
 ]
