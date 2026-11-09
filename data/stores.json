@@ -247,5 +247,189 @@
     "maps_url": "https://maps.google.com/?cid=3377292344015401340",
     "added": "2026-11-02",
     "active": true
+  },
+  {
+    "id": "pileto-sofia",
+    "name": "Пилето",
+    "type": "restaurant",
+    "city": {
+      "bg": "София",
+      "en": "Sofia"
+    },
+    "address": {
+      "bg": "ул. „Искър“ 11, център",
+      "en": "11 Iskar St, city centre"
+    },
+    "lat": 42.6996304,
+    "lng": 23.3260461,
+    "description": {
+      "bg": "Заведение за пържено пиле в центъра на София.",
+      "en": "A fried-chicken spot in central Sofia."
+    },
+    "website": "https://www.instagram.com/pileto.fried.chicken.shop/",
+    "maps_url": "https://maps.google.com/?cid=4050941288222649084",
+    "added": "2026-11-09",
+    "active": true
+  },
+  {
+    "id": "arnold-fit-food-nsa-sofia",
+    "name": "Arnold Fit Food – НСА",
+    "type": "restaurant",
+    "city": {
+      "bg": "София",
+      "en": "Sofia"
+    },
+    "address": {
+      "bg": "ул. „Акад. Стефан Младенов“ 90, Студентски град (в НСА „Васил Левски“)",
+      "en": "90 Akad. Stefan Mladenov St, Studentski Grad (in the National Sports Academy)"
+    },
+    "lat": 42.6433997,
+    "lng": 23.3446461,
+    "description": {
+      "bg": "Ресторант за здравословна храна с ястия, богати на протеин, в Националната спортна академия.",
+      "en": "A health-food restaurant with protein-rich dishes, inside the National Sports Academy."
+    },
+    "website": "https://arnold-food.com/",
+    "maps_url": "https://maps.google.com/?cid=17017081797920990922",
+    "added": "2026-11-09",
+    "active": true
+  },
+  {
+    "id": "arnold-fit-food-studentski-grad-sofia",
+    "name": "Arnold Fit Food – Студентски град",
+    "type": "restaurant",
+    "city": {
+      "bg": "София",
+      "en": "Sofia"
+    },
+    "address": {
+      "bg": "ул. „Проф. арх. Храбър Попов“ 3, Студентски град",
+      "en": "3 Prof. Arh. Hrabar Popov St, Studentski Grad"
+    },
+    "lat": 42.6445172,
+    "lng": 23.3400778,
+    "description": {
+      "bg": "Ресторант за здравословна храна с ястия, богати на протеин, в Студентски град.",
+      "en": "A health-food restaurant with protein-rich dishes, in Studentski Grad."
+    },
+    "website": "https://arnold-food.com/",
+    "maps_url": "https://maps.google.com/?cid=5974595368881475671",
+    "added": "2026-11-09",
+    "active": true
+  },
+  {
+    "id": "arnold-fit-food-nishava-sofia",
+    "name": "Arnold Fit Food – Нишава",
+    "type": "restaurant",
+    "city": {
+      "bg": "София",
+      "en": "Sofia"
+    },
+    "address": {
+      "bg": "ул. „Нишава“ 103, ж.к. Стрелбище",
+      "en": "103 Nishava St, Strelbishte"
+    },
+    "lat": 42.6742159,
+    "lng": 23.2973902,
+    "description": {
+      "bg": "Ресторант за здравословна храна с ястия, богати на протеин, в ж.к. Стрелбище.",
+      "en": "A health-food restaurant with protein-rich dishes, in Strelbishte."
+    },
+    "website": "https://arnold-food.com/",
+    "maps_url": "https://maps.google.com/?cid=17291262029058253210",
+    "added": "2026-11-09",
+    "active": true
+  },
+  {
+    "id": "arnold-fit-food-dianabad-sofia",
+    "name": "Arnold Fit Food – Дианабад",
+    "type": "restaurant",
+    "city": {
+      "bg": "София",
+      "en": "Sofia"
+    },
+    "address": {
+      "bg": "ул. „Тинтява“ 29А, Дианабад",
+      "en": "29A Tintyava St, Dianabad"
+    },
+    "lat": 42.6663004,
+    "lng": 23.3471898,
+    "description": {
+      "bg": "Ресторант за здравословна храна с ястия, богати на протеин, в Дианабад.",
+      "en": "A health-food restaurant with protein-rich dishes, in Dianabad."
+    },
+    "website": "https://arnold-food.com/",
+    "maps_url": "https://maps.google.com/?cid=608942614154783433",
+    "added": "2026-11-09",
+    "active": true
+  },
+  {
+    "id": "arnold-fit-food-lyulin-sofia",
+    "name": "Arnold Fit Food – Люлин",
+    "type": "restaurant",
+    "city": {
+      "bg": "София",
+      "en": "Sofia"
+    },
+    "address": {
+      "bg": "бул. „Захари Стоянов“, ж.к. Люлин 4 (сграда „Сан Марино“)",
+      "en": "Zahari Stoyanov Blvd, Lyulin 4 (San Marino building)"
+    },
+    "lat": 42.7178856,
+    "lng": 23.2470029,
+    "description": {
+      "bg": "Ресторант за здравословна храна с ястия, богати на протеин, в ж.к. Люлин.",
+      "en": "A health-food restaurant with protein-rich dishes, in Lyulin."
+    },
+    "website": "https://arnold-food.com/",
+    "maps_url": "https://maps.google.com/?cid=2458675149605842181",
+    "added": "2026-11-09",
+    "active": true
+  },
+  {
+    "id": "arnold-fit-food-dragalevtsi-sofia",
+    "name": "Arnold Fit Food – Драгалевци",
+    "type": "restaurant",
+    "city": {
+      "bg": "София",
+      "en": "Sofia"
+    },
+    "address": {
+      "bg": "ул. „Нарцис“ 17, кв. Драгалевци",
+      "en": "17 Nartsis St, Dragalevtsi"
+    },
+    "lat": 42.6316329,
+    "lng": 23.3055372,
+    "description": {
+      "bg": "Ресторант за здравословна храна с ястия, богати на протеин, в кв. Драгалевци, в подножието на Витоша.",
+      "en": "A health-food restaurant with protein-rich dishes, in Dragalevtsi, at the foot of Vitosha."
+    },
+    "website": "https://arnold-food.com/",
+    "maps_url": "https://maps.google.com/?cid=9238865875905075461",
+    "added": "2026-11-09",
+    "active": true
+  },
+  {
+    "id": "arnold-fit-food-markovo-tepe-plovdiv",
+    "name": "Arnold Fit Food – Мол Марково тепе",
+    "type": "restaurant",
+    "city": {
+      "bg": "Пловдив",
+      "en": "Plovdiv"
+    },
+    "address": {
+      "bg": "Мол „Марково тепе“, бул. „Руски“ 54",
+      "en": "Markovo Tepe Mall, 54 Ruski Blvd"
+    },
+    "lat": 42.1418374,
+    "lng": 24.7410712,
+    "description": {
+      "bg": "Ресторант за здравословна храна с ястия, богати на протеин, в мол „Марково тепе“ в центъра на Пловдив.",
+      "en": "A health-food restaurant with protein-rich dishes, in Markovo Tepe Mall in central Plovdiv."
+    },
+    "website": "https://arnold-food.com/",
+    "maps_url": "https://maps.google.com/?cid=13902484125048958018",
+    "added": "2026-11-09",
+    "active": true
   }
 ]
