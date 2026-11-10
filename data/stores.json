@@ -431,5 +431,27 @@
     "maps_url": "https://maps.google.com/?cid=13902484125048958018",
     "added": "2026-11-09",
     "active": false
+  },
+  {
+    "id": "alcohol-tobacco-shop-hristo-smirnenski-sofia",
+    "name": "Магазин за алкохол и тютюн",
+    "type": "shop",
+    "city": {
+      "bg": "София",
+      "en": "Sofia"
+    },
+    "address": {
+      "bg": "бул. „Христо Смирненски“ 2, кв. Лозенец",
+      "en": "2 Hristo Smirnenski Blvd, Lozenets"
+    },
+    "lat": 42.6852574,
+    "lng": 23.3302386,
+    "description": {
+      "bg": "Квартален магазин за алкохол и тютюневи изделия в Лозенец, на бул. „Христо Смирненски“.",
+      "en": "A neighbourhood alcohol and tobacco shop in Lozenets, on Hristo Smirnenski Blvd."
+    },
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=42.6852574,23.3302386",
+    "added": "2026-11-10",
+    "active": true
   }
 ]
