@@ -26,6 +26,7 @@ directory sites as the best-corroborated result for a "LA Associates" search.
 - Legal name: “LA Associates” Ltd. / «Ел Ей Асошиейтс» ООД
 - Address: ul. Deyan Belishki 113A, Sofia, Bulgaria / ул. Деян Белишки 113А, София, България
 - Phone: +359 88 718 0555
+- Phone 2: +359 89 851 2722
 - Email: contact@laassociatesbg.com
 - Supplier: Sumol+Compal, Portugal
 - Product description for Guaraná Antarctica (general)
